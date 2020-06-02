@@ -1,6 +1,5 @@
 import { Container, Row, Col } from 'reactstrap';
 import { Button } from 'reactstrap';
-import { withRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function Product(props) {
@@ -21,8 +20,10 @@ export default function Product(props) {
 								</Col>
 								<Col lg="6">
 									<Button color="primary">Add to cart</Button>
-									<Link href={`/[productView]/[product]`} as={`/product/${props.id}`}>
-										<Button color="danger">View</Button>
+									<Link href={`/[productView]/[product]`} as={`/product/${props.product}`}>
+										<Button color="danger" className="ml-2">
+											<a>View</a>
+										</Button>
 									</Link>
 								</Col>
 							</Row>

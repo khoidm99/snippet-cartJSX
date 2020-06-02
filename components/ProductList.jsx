@@ -37,15 +37,15 @@ export function ProductList() {
 
 	return (
 		<div className="product-list">
-			{products.map((product) => (
+			{products.map((product, index) => (
 				<Product
 					name={product.name}
 					price={product.price}
 					image={product.image}
-					index={product.id}
 					description={product.description}
-					product={product.product}
+					product={product}
 					id={product.id}
+					key={index}
 				></Product>
 			))}
 		</div>

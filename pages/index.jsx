@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Container } from 'reactstrap';
 import Header from '../components/Header';
-
 import { ProductList } from '../components/ProductList';
+import { BlogList } from '../components/BlogList';
 export default function Home() {
 	return (
 		<div className="App">
@@ -35,6 +35,7 @@ export default function Home() {
 				</div>
 			</main>
 			<ProductList />
+			
 		</div>
 	);
 }

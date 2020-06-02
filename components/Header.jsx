@@ -1,8 +1,11 @@
 import { Container, Row, Col } from 'reactstrap';
 import { Navbar, NavbarBrand, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap';
 import Link from 'next/link';
+import Router from 'next/router';
+import { useRouter } from 'next/router';
 
-export default function Header() {
+export default function Header({ href }) {
+	const router = useRouter();
 	return (
 		<Container>
 			<Navbar light expand="lg">
@@ -15,9 +18,11 @@ export default function Header() {
 				<Nav className="ml-auto" navbar>
 					<NavItem className=" d-flex">
 						<Container>
-							<Link className="Blog-page" href="./Blog">
-								<a>Blog</a>
-							</Link>
+							<div defaultSelectedKeys={[router.pathname === '/' ? '2' : '1']}>
+								<Link className="Blog-page" href="/blogViews/blogView">
+									Blog
+								</Link>
+							</div>
 
 							<Link href="#">
 								<a
